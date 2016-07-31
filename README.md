@@ -2,15 +2,9 @@
 
 [文章来源](http://www.jianshu.com/notebooks/3767449/latest)
 
-**目录**
-
-- []()
+[参考文章](http://blog.csdn.net/vipzjyno1/article/details/23542617)
 
 
-## 命名规范
-
-* 包命名规范
-* 代码命名规范
 
 
 
