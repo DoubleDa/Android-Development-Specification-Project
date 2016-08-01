@@ -1,4 +1,4 @@
-package com.dyx.adsp.library.beans;
+package com.dyx.adsp.mylibrary.beans;
 
 /**
  * project name：Android-Development-Specification-Project

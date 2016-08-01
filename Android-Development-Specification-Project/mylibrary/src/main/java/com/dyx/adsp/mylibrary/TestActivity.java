@@ -1,10 +1,10 @@
-package com.dyx.adsp.library;
+package com.dyx.adsp.mylibrary;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.dyx.adsp.library.beans.TestObject;
+import com.dyx.adsp.mylibrary.beans.TestObject;
 
 /**
  * project name：Android-Development-Specification-Project
@@ -24,7 +24,7 @@ public class TestActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+       
         //局部名称
         Button btnTest = new Button(this);
 

@@ -1,4 +1,4 @@
-package com.dyx.adsp.library;
+package com.dyx.adsp.thridlibrary;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

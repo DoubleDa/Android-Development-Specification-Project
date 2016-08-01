@@ -1,4 +1,4 @@
-package com.dyx.adsp.library;
+package com.dyx.adsp.thridlibrary;
 
 import org.junit.Test;
 

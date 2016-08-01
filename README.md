@@ -1,8 +1,226 @@
 # Android 开发架构规范
 
-[文章来源](http://www.jianshu.com/notebooks/3767449/latest)
+## 项目架构
 
-[参考文章](http://blog.csdn.net/vipzjyno1/article/details/23542617)
+- app: 应用目录
+	o2o.example.com
+    - common: 应用公共模块
+    	- activity: Activity管理、内存模型相关
+    		- ActivityContainer.java
+    		- MemoryDataManager.java
+    	- chat: 聊天模块
+    		- AudioHelper.java
+    		- ChatManager.java
+    		- MessageHandler.java
+    		- MessageHelper.java
+    		- NotificationBroadcastReceiver.java
+    	- datepicker: 时间选择模块
+    		- CustomDialog.java
+    		- DatePickerDialog.java
+    		- DatePickerFragment.java
+    		- DateTimePickerDialog.java
+    		- DateTimePickerFragment.java
+    	- utils: 工具模块
+    		- api
+    		- app
+    		- device
+    		- explosion
+    		- file
+    		- log
+    		- net
+    		- notify
+    		- phone
+    		- resource
+    		- sp
+    		- text
+    		- view
+    	- widget: 组件相关
+    		- CustomLinearLayout.java
+    		- CustomViewPager.java
+    		- ExtendGalleryViewPager.java
+    		- GridBgRelativeLayout.java
+    		- LetterMenuView.java
+    		- LinedEditText.java
+    		- MyScrollView.java
+    		- NoScrollViewPager.java
+    		- NoVerticalTouchScrollView.java
+    		- ObservableViewPager.java
+    		- PlayButton.java
+    		- SuperScrollView.java
+    		- TouchableImageView.java
+    		- ObservableRecyclerView.java
+    		- ReportDialog.java
+    - constant: 常量类
+    	- ActionEventConstant.java: 统计自定义事件
+    	- AppConstant.java: App常量类
+    	- ChatConstant.java: 聊天常量类
+    	- CommentConstant.java: 评论常量类
+    	- DBConstant.java: 数据库常量类
+    	- FeedConstant.java: 回复常量类
+    	- FileConstant.java: 文件常量类
+    	- HttpParamConstant.java: Http参数常量类
+    	- HttpUrlConstant: Http Url常量类
+    	- SearchOrderbyConstant.java: 搜索排序依据常量类
+    	- ShareConstant.java: 分享常量类
+    	- UploadPhotoConstant.java: 上传图片常量类
+    	- UserAccountConstant.java: 用户账号常量类
+    	- ValidCodeType.java: 验证码常量类
+    - di
+    	- component
+    		- ActivityComponent.java
+    		- ChatComponent.java
+    		- CommonComponent.java
+    		- DatingComponent.java
+    		- MainComponent.java
+    		- PartyComponent.java
+    		- UserComponent.java
+    		- XApplicationComponent.java
+    	- module
+    		- ActivityModule.java
+    		- CacheModule.java
+    		- ChatCommonModule.java
+    		- ChatModule.java
+    		- CommonModule.java
+    		- DatingModule.java
+    		- FeedModule.java
+    	- HasComponent.java
+    	- PerActivity.java
+    - interactors
+    	- address
+    		- AddressInterceptor.java
+    		- AddressSelectController.java
+    	- cache
+    		- ChatStorgeInteractor.java
+    		- ChatStorgeInteractorImpl.java
+    	- chat
+    		- ChatCommonInteractor.java
+    		- ChatCommonInteractorImpl.java
+    	- common
+    		- SplashInteractor.java
+    		- SplashInteractorImpl.java
+    		- TalkingDataController.java
+    	- dating
+    		- DatingInteractor.java
+    		- DatingInteractorImpl.java
+    	- feed
+    		- FeedInteractor.java
+    		- FeedInteractorImpl.java
+    	- job
+    	- party
+    		- PartyInteractor.java
+    		- PartyInteractorImpl.java
+    	- upload
+    		- UploadInteractor.java
+    		- UploadInteractorImpl.java
+    	- user
+    - presenter
+    	- chat
+    		- GroupChatPresenter.java
+    		- GroupChatPresenterImpl.java
+    	- common
+    		- SplashPresenter.java
+    		- SplashPresenterImpl.java
+    	- dating
+    		- DatingCardListPresenter.java
+    		- DatingCardListPresenterImpl.java
+    	- feed
+    		- FeedListPresenter.java
+    		- FeedListPresenterImpl.java
+    	- party
+    		- PartyCreatePresenter.java
+    		- PartyCreatePresenterImpl.java
+    	- user
+    		- AboutMePresenter.java
+    		- AboutMePresenterImpl.java
+    	- MainPresenter.java
+    	- MainPresenterImpl.java
+    - repository
+    	- bean
+    		- Msg.java
+    		- UserInfo.java
+    	- db
+    	- event
+    		- chat
+    		- dating
+    		- feed
+    		- location
+    	- json
+    		- app
+    		- chat
+    		- dating
+    		- question
+    		- user
+    		- upload
+    	- memory
+    	- net
+    		- XXXHeaderInteceptor.java
+    		- XXXNetworkInteractor.java
+    	- request
+    		- address
+    		- char
+    		- party
+    		- feed
+    - view
+    	- activity
+    		- chat
+    			- view
+    				- GroupChatView.java
+    			- GroupChatActivity.java
+    		- party
+    	- adapter
+    		- baidu
+    			- viewholder
+    				- BaiduMapResultVh.java
+    			- BaiduMapResultAdapter.java
+    		- chat
+    	- fragment
+    	- base
+    		- BaseActivity.java
+    		- BaseFragment.java
+    		- BaseSwipeActivity.java
+    		- XApplication.java
+    	- helper
+    		- ChatNavigationPageHelper.java
+    		- DatingFilterHelper.java
+    	- viewholder
+    		- HomeGroupItemsViewHolder.java
+    		- HomeValidViewHolder.java
+    - wxapi
+    - CrashHandler.java
+- mylibrary: 本项目库目录
+	o2o.example.com.mylibrary
+    - exception
+    	- GroupNotExistException.java
+    	- NetWorkUnvailableException.java
+    - executor
+    	- JobExecutor.java
+    	- ThreadExecutor.java
+    - interactors
+    	- DefaultSubscriber.java
+    	- HiInteractor.java
+    - presenter
+    	- HiPresenter.java
+    - repository
+    	- json
+    		- FastJsonConverterFactory.java
+    		- JsonUtil.java
+    	- net
+    		- HeaderInterceptor.java
+    		- UserAgent.java
+    - utils
+    	- ACache.java
+    	- ResourcesUtil.java
+    - view
+    	- XXXView.java
+    - HasComponent.java
+- thridlibrary: 第三方库目录
+	o2o.example.com.thridlibrary
+    - umengim: 友盟IM模块
+    - umengst: 友盟统计
+    - umengpush: 友盟推送
+    - bugly: bugly应用质量跟踪
+
+## 参考文章
 
 
 
